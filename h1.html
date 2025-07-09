@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hostel Room Allocation System</title>
+    <link rel="stylesheet" href="h1.css">
+    
+</head>
+<body>
+    <div class="container">
+        <h1>Hostel Room Allocation System</h1>
+
+        <div class="form-container">
+            <h2>Add/Edit Student</h2>
+            <form id="hostelForm">
+                <input type="hidden" id="studentId">
+                <div class="form-group">
+                    <label for="name">Full Name:</label>
+                    <input type="text" id="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="roll">Roll Number:</label>
+                    <input type="text" id="roll" required>
+                </div>
+                <div class="form-group">
+                    <label for="room">Room Number:</label>
+                    <input type="text" id="room" required>
+                </div>
+                <div class="form-group">
+                    <label for="year">Year:</label>
+                    <input type="number" id="year" required min="1" max="4">
+                </div>
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" required>
+                </div>
+                <button type="submit" id="submitBtn">Add Student</button>
+                <button type="button" id="cancelBtn" class="cancel">Cancel</button>
+            </form>
+        </div>
+
+        <div class="search-container">
+            <input type="text" id="searchInput" placeholder="Search students...">
+            <button id="searchBtn">Search</button>
+            <button id="resetSearchBtn">Reset</button>
+        </div>
+
+        <div class="student-list">
+            <h2>Allocated Students</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Roll</th>
+                        <th>Room</th>
+                        <th>Year</th>
+                        <th>Email</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="studentTableBody"></tbody>
+            </table>
+        </div>
+
+        <div class="stats-container">
+            <h2>Statistics</h2>
+            <p>Total Students: <span id="totalStudents">0</span></p>
+            <p>Total Rooms Used: <span id="roomsUsed">0</span></p>
+        </div>
+    </div>
+
+    <script src="h1.js"></script>
+</body>
+</html>
