@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Hostel Room Allocation - Dashboard</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background-color: #f4f6f9;
+    }
+
+    .header {
+      background-color: #4facfe;
+      color: white;
+      padding: 20px;
+      text-align: center;
+      font-size: 24px;
+    }
+
+    .sidebar {
+      width: 220px;
+      background-color: #333;
+      color: white;
+      position: fixed;
+      top: 70px;
+      bottom: 0;
+      left: 0;
+      padding-top: 20px;
+    }
+
+    .sidebar a {
+      display: block;
+      color: white;
+      padding: 12px 20px;
+      text-decoration: none;
+    }
+
+    .sidebar a:hover {
+      background-color: #575757;
+    }
+
+    .main-content {
+      margin-left: 240px;
+      padding: 20px;
+    }
+
+    .card {
+      background-color: white;
+      padding: 20px;
+      margin-bottom: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .card h3 {
+      margin-top: 0;
+      color: #4facfe;
+    }
+
+    .stats-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .stat-card {
+      flex: 1 1 200px;
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      text-align: center;
+    }
+
+    .stat-card h2 {
+      margin: 10px 0;
+      color: #333;
+    }
+
+    .stat-card p {
+      color: #666;
+    }
+
+    @media (max-width: 768px) {
+      .sidebar {
+        width: 100%;
+        position: relative;
+      }
+      .main-content {
+        margin-left: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<div class="header">
+  Hostel Room Allocation - University Dashboard
+</div>
+
+<div class="sidebar">
+  <a href="login +.html">🏠 login </a>
+  <a href="h1.html">🛏️ Allocate Rooms</a>
+  <a href="vacant.html">🚪 Vacant Rooms</a>
+  <a href="logout.html">🔓 Logout</a>
+</div>
+
+<div class="main-content">
+  <div class="stats-container">
+    <div class="stat-card">
+      <h3>Total Students</h3>
+      <h2>350</h2>
+      <p>Enrolled in hostels</p>
+    </div>
+
+    <div class="stat-card">
+      <h3>Total Rooms</h3>
+      <h2>200</h2>
+      <p>Available rooms</p>
+    </div>
+
+    <div class="stat-card">
+      <h3>Allocated Rooms</h3>
+      <h2>180</h2>
+      <p>Rooms currently allocated</p>
+    </div>
+
+    <div class="stat-card">
+      <h3>Vacant Rooms</h3>
+      <h2>20</h2>
+      <p>Rooms available for allocation</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3>Recent Room Allocation Requests</h3>
+    <ul>
+      <li>Reg No: 2023REG101 - Requested Room: 305A</li>
+      <li>Reg No: 2023REG102 - Requested Room: 112B</li>
+      <li>Reg No: 2023REG103 - Requested Room: 212C</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h3>Notifications</h3>
+    <ul>
+      <li>⚠️ Room 405 under maintenance.</li>
+      <li>ℹ️ Allocation deadline for new semester is 15th July.</li>
+      <li>✅ Room 102A allocated successfully to Reg No: 2023REG099.</li>
+    </ul>
+  </div>
+</div>
+
+</body>
+</html>
