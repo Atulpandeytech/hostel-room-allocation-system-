@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Logout - Hostel Room Allocation</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: linear-gradient(to right, #4facfe, #00f2fe);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .logout-container {
+      background-color: #fff;
+      padding: 40px;
+      border-radius: 15px;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+      text-align: center;
+    }
+
+    .logout-container h2 {
+      color: #333;
+      margin-bottom: 20px;
+    }
+
+    .logout-container p {
+      color: #666;
+      margin-bottom: 30px;
+      font-size: 18px;
+    }
+
+    .login-btn {
+      padding: 12px 20px;
+      border: none;
+      border-radius: 8px;
+      background-color: #4facfe;
+      color: white;
+      font-size: 16px;
+      cursor: pointer;
+      text-decoration: none;
+    }
+
+    .login-btn:hover {
+      background-color: #00c3ff;
+    }
+  </style>
+</head>
+<body>
+
+<div class="logout-container">
+  <h2>You have been logged out</h2>
+  <p>Registration Number: <strong id="regNoDisplay">---</strong></p>
+
+  <a href="login.html" class="login-btn">Login Again</a>
+</div>
+
+<script>
+  // Get reg no from sessionStorage
+  const regNo = sessionStorage.getItem('regno') || 'Unknown';
+  document.getElementById('regNoDisplay').textContent = regNo;
+
+  // Clear session storage (logout)
+  sessionStorage.clear();
+</script>
+
+</body>
+</html>
