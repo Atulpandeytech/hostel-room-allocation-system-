@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Vacant Rooms - Hostel Room Allocation</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 20px;
+      background-color: #f4f6f9;
+    }
+
+    h2 {
+      color: #333;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .room-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+
+    .room-card {
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .room-card h3 {
+      margin-top: 0;
+      color: #4facfe;
+    }
+
+    .room-card p {
+      margin: 5px 0;
+      color: #555;
+    }
+  </style>
+</head>
+<body>
+
+<h2>Currently Vacant Rooms</h2>
+
+<div class="room-list" id="roomList">
+  <!-- Rooms will load here -->
+</div>
+
+<script>
+  // Example vacant room data
+  const vacantRooms = [
+    { roomNumber: '101A', type: 'Single', floor: '1st', capacity: 1 },
+    { roomNumber: '102B', type: 'Double', floor: '1st', capacity: 2 },
+    { roomNumber: '203C', type: 'Single', floor: '2nd', capacity: 1 },
+    { roomNumber: '305A', type: 'Triple', floor: '3rd', capacity: 3 }
+  ];
+
+  const roomList = document.getElementById('roomList');
+
+  function loadRooms() {
+    vacantRooms.forEach((room) => {
+      const card = document.createElement('div');
+      card.className = 'room-card';
+      card.innerHTML = `
+        <h3>Room ${room.roomNumber}</h3>
+        <p>Type: ${room.type}</p>
+        <p>Floor: ${room.floor}</p>
+        <p>Capacity: ${room.capacity} Person(s)</p>
+        <p>Status: <strong style="color: green;">Vacant</strong></p>
+      `;
+      roomList.appendChild(card);
+    });
+  }
+
+  loadRooms();
+</script>
+
+</body>
+</html>
