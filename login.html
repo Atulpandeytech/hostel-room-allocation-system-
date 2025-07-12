@@ -3,155 +3,115 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Hostel Room Allocation - Dashboard</title>
+  <title>Hostel Room Allocation - Login</title>
   <style>
     body {
       font-family: Arial, sans-serif;
-      margin: 0;
-      background-color: #f4f6f9;
-    }
-
-    .header {
-      background-color: #4facfe;
-      color: white;
-      padding: 20px;
-      text-align: center;
-      font-size: 24px;
-    }
-
-    .sidebar {
-      width: 220px;
-      background-color: #333;
-      color: white;
-      position: fixed;
-      top: 70px;
-      bottom: 0;
-      left: 0;
-      padding-top: 20px;
-    }
-
-    .sidebar a {
-      display: block;
-      color: white;
-      padding: 12px 20px;
-      text-decoration: none;
-    }
-
-    .sidebar a:hover {
-      background-color: #575757;
-    }
-
-    .main-content {
-      margin-left: 240px;
-      padding: 20px;
-    }
-
-    .card {
-      background-color: white;
-      padding: 20px;
-      margin-bottom: 20px;
-      border-radius: 10px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    }
-
-    .card h3 {
-      margin-top: 0;
-      color: #4facfe;
-    }
-
-    .stats-container {
+      background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+                  url('hostel.jpg') no-repeat center center fixed;
+      background-size: cover;
       display: flex;
-      flex-wrap: wrap;
-      gap: 20px;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
     }
 
-    .stat-card {
-      flex: 1 1 200px;
-      background-color: #fff;
-      padding: 20px;
-      border-radius: 10px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    .login-container {
+      background-color: rgba(255, 255, 255, 0.95);
+      padding: 40px;
+      border-radius: 15px;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+      width: 100%;
+      max-width: 400px;
+    }
+
+    .login-container h2 {
       text-align: center;
-    }
-
-    .stat-card h2 {
-      margin: 10px 0;
+      margin-bottom: 20px;
       color: #333;
     }
 
-    .stat-card p {
-      color: #666;
+    .form-group {
+      margin-bottom: 15px;
     }
 
-    @media (max-width: 768px) {
-      .sidebar {
-        width: 100%;
-        position: relative;
-      }
-      .main-content {
-        margin-left: 0;
-      }
+    .form-group label {
+      display: block;
+      margin-bottom: 5px;
+      color: #333;
+    }
+
+    .form-group input {
+      width: 100%;
+      padding: 10px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+    }
+
+    .login-btn {
+      width: 100%;
+      padding: 12px;
+      border: none;
+      border-radius: 8px;
+      background-color: #4facfe;
+      color: white;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    .login-btn:hover {
+      background-color: #00c3ff;
+    }
+
+    .error {
+      color: red;
+      font-size: 14px;
+      margin-top: 10px;
     }
   </style>
 </head>
 <body>
 
-<div class="header">
-  Hostel Room Allocation - University Dashboard
+<div class="login-container">
+  <h2>Hostel Room Allocation</h2>
+  <form id="loginForm">
+    <div class="form-group">
+      <label for="regno">Registration Number</label>
+      <input type="text" id="regno" name="regno" placeholder="Enter registration number" required>
+    </div>
+
+    <div class="form-group">
+      <label for="password">Password</label>
+      <input type="password" id="password" name="password" placeholder="Enter password" required>
+    </div>
+
+    <button type="submit" class="login-btn">Login</button>
+    <div id="errorMsg" class="error"></div>
+  </form>
 </div>
 
-<div class="sidebar">
-  <a href="login +.html">🏠 login </a>
-  <a href="h1.html">🛏️ Allocate Rooms</a>
-  <a href="vacant.html">🚪 Vacant Rooms</a>
-  <a href="logout.html">🔓 Logout</a>
-</div>
+<script>
+  document.getElementById('loginForm').addEventListener('submit', function(e) {
+    e.preventDefault();
 
-<div class="main-content">
-  <div class="stats-container">
-    <div class="stat-card">
-      <h3>Total Students</h3>
-      <h2>350</h2>
-      <p>Enrolled in hostels</p>
-    </div>
+    const regno = document.getElementById('regno').value.trim();
+    const password = document.getElementById('password').value.trim();
+    const errorMsg = document.getElementById('errorMsg');
 
-    <div class="stat-card">
-      <h3>Total Rooms</h3>
-      <h2>200</h2>
-      <p>Available rooms</p>
-    </div>
-
-    <div class="stat-card">
-      <h3>Allocated Rooms</h3>
-      <h2>180</h2>
-      <p>Rooms currently allocated</p>
-    </div>
-
-    <div class="stat-card">
-      <h3>Vacant Rooms</h3>
-      <h2>20</h2>
-      <p>Rooms available for allocation</p>
-    </div>
-  </div>
-
-  <div class="card">
-    <h3>Recent Room Allocation Requests</h3>
-    <ul>
-      <li>Reg No: 2023REG101 - Requested Room: 305A</li>
-      <li>Reg No: 2023REG102 - Requested Room: 112B</li>
-      <li>Reg No: 2023REG103 - Requested Room: 212C</li>
-    </ul>
-  </div>
-
-  <div class="card">
-    <h3>Notifications</h3>
-    <ul>
-      <li>⚠️ Room 405 under maintenance.</li>
-      <li>ℹ️ Allocation deadline for new semester is 15th July.</li>
-      <li>✅ Room 102A allocated successfully to Reg No: 2023REG099.</li>
-    </ul>
-  </div>
-</div>
+    if (regno === "" || password === "") {
+      errorMsg.textContent = "Please fill in all fields.";
+    } else {
+      if (regno === "12311871" && password === "1234") {
+        alert("Login Successful! Redirecting...");
+        window.location.href = "dashboard.html";
+      } else {
+        errorMsg.textContent = "Invalid Registration Number or Password.";
+      }
+    }
+  });
+</script>
 
 </body>
 </html>
+
